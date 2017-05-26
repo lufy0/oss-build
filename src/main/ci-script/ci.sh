@@ -79,6 +79,7 @@ publish_release() {
 
 publish_maven_site(){
     echo "publish_maven_site @ $(pwd)";
+    if [ -z "${BUILD_PUBLISH_CHANNEL}" ] ; then BUILD_PUBLISH_CHANNEL="release"; fi
     if [ -f pom.xml ]; then maven_publish_maven_site; fi
 }
 
